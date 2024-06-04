@@ -1,16 +1,17 @@
+<!-- templates/admin/custom_login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
+    <title>Admin Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/CSS/customstyles.css">
 </head>
 <body>
-    
+   
     <div class="heading">
-        <img class="logoimage pt-2 ps-2" style="height: 110px; width: 260px; " src="static/cmpdilogo.jpg" alt="logo">
+        <img class="logoimage pt-2 ps-2" style="height: 110px; width: 260px; " src="/static/cmpdilogo.jpg" alt="logo">
         <div style=" text-align: center;" class="system">
             <h2 style="color: red;">CMPDI BillTrack System </h2>
             <h6 style="color: black;">Track, manage, and streamline your bills seamlessly</h6>
@@ -37,12 +38,12 @@
 
     <div style="display: flex;">
     <div class="imagee" style="width: 50%;">
-        <img src="/static/c1.1.jpg" style="height: 490px; width: 750px;" alt="image">
+        <img src="/static/c1.1.jpg" style="height: 450px; width: 700px;" alt="image">
     </div>  
-    <div class="login-form" style=" float: right;">
-        <h4 style="text-align: center;"><b>User Login</b></h4>
+    <div class="login-form" style=" float: right; position: relative; right: 30px;">
+        <h4 style="text-align: center;"><b>Admin Login</b></h4>
         <hr>
-        <form method="post" action="/userlogin">
+        <form method="post" action="/account">
             {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -53,8 +54,6 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <input type="submit" value="Log in">
-            
-            <p style="margin-top: 10px;">New user? <a href="/register">Register</a></p>
         </form>
     </div>
 

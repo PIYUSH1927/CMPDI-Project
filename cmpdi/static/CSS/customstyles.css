@@ -1,0 +1,93 @@
+/* static/CSS/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.login-form {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 12px); /* Adjust for border width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.logoimage{
+    height: 150px;
+    width: 400px;
+    display: flex;
+}
+
+.heading{
+    display: flex;
+}
+
+.system{
+    margin: auto;
+    position: relative;
+    right: 130px;
+    text-align: center;
+}
+.active{
+    text-decoration: underline;
+}
+
+.main{
+    text-align:center;
+    
+}
+
+
+
+.top{
+    display: inline-block;
+  }
+  
+  .bottom{
+    color: rgb(149, 149, 149);
+  }
+  
+  .info{
+    color:rgb(206, 205, 205);
+  }
+  
+  #SW{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+  }
+  

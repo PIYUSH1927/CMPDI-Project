@@ -1,6 +1,6 @@
 .logoimage{
     height: 150px;
-    width: 400px;
+    width: 350px;
     display: flex;
 }
 
@@ -8,11 +8,12 @@
     display: flex;
 }
 
+
 .system{
     margin: auto;
     position: relative;
-    right: 150px;
-    color: red;
+    right: 130px;
+    text-align: center;
 }
 .active{
     text-decoration: underline;
