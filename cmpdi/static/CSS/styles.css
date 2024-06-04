@@ -1,0 +1,45 @@
+.logoimage{
+    height: 150px;
+    width: 400px;
+    display: flex;
+}
+
+.heading{
+    display: flex;
+}
+
+.system{
+    margin: auto;
+    position: relative;
+    right: 150px;
+    color: red;
+}
+.active{
+    text-decoration: underline;
+}
+
+.main{
+    text-align:center;
+    
+}
+
+
+
+.top{
+    display: inline-block;
+  }
+  
+  .bottom{
+    color: rgb(149, 149, 149);
+  }
+  
+  .info{
+    color:rgb(206, 205, 205);
+  }
+  
+  #SW{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+  }
+  
