@@ -10,13 +10,13 @@
 </head>
 <body>
    
-    <div class="heading">
+    <div class="heading" style="background-color: white;">
         <img class="logoimage pt-2 ps-2" style="height: 110px; width: 260px; " src="/static/cmpdilogo.jpg" alt="logo">
         <div style=" text-align: center;" class="system">
             <h2 style="color: red;">CMPDI BillTrack System </h2>
             <h6 style="color: black;">Track, manage, and streamline your bills seamlessly</h6>
         </div>
-        </div>
+    </div>
         <nav class="navbar navbar-expand-lg bg-info ">
             <div class="container-fluid ">
               <div class="collapse navbar-collapse " id="navbarNav">
@@ -43,6 +43,9 @@
     <div class="login-form" style=" float: right; position: relative; right: 30px;">
         <h4 style="text-align: center;"><b>Admin Login</b></h4>
         <hr>
+        {% if error %}
+        <p style="text-align: center; color: red;">{{ error }}</p>
+        {% endif %}
         <form method="post" action="/account">
             {% csrf_token %}
             <div class="form-group">
@@ -64,7 +67,7 @@
     <footer class=" text-white py-3 container-fluid">
         <!--top-->
         <div class="text-end  " style="margin-right: 140px; ">
-        <p class="me-5 pe-4 pt-3"  id="SW">COAL INDIA LIMITED HEAD OFFICE</p>
+        <p class="me-4 pe-4 pt-3"  id="SW">COAL INDIA LIMITED HEAD OFFICE</p>
         </div>
 
         <!--row-->

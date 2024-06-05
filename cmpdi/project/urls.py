@@ -13,4 +13,5 @@ urlpatterns = [
     path('account', views.account, name='account'),
 
 
+    path('create/', views.random_detail_create, name='random_detail_create'),
 ]

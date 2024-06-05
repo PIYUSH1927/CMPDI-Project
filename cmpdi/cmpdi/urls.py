@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.urls import path,include
 
 admin.site.site_header="CMPDI Admin"
-admin.site.site_title="Billing Management System"
-admin.site.index_title="Welcome to Billing Management System"
+admin.site.site_title="CMPDI BillTrack System"
+admin.site.index_title="Welcome to CMPDI BillTrack System Admin Panel"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -7,6 +7,55 @@
 </head>
 <body>
     Home
+
+    <div class="container">
+        <h2 class="mt-4">Random Detail Form</h2>
+        <form method="post" action="/create/">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="field1" class="form-label">Field 1:</label>
+                <input type="text" class="form-control" id="field1" name="field1" required>
+            </div>
+            <div class="mb-3">
+                <label for="field2" class="form-label">Field 2:</label>
+                <input type="number" class="form-control" id="field2" name="field2" required>
+            </div>
+            <div class="mb-3">
+                <label for="field3" class="form-label">Field 3:</label>
+                <input type="date" class="form-control" id="field3" name="field3" required>
+            </div>
+            <div class="mb-3">
+                <label for="field4" class="form-label">Field 4:</label>
+                <input type="text" class="form-control" id="field4" name="field4" required>
+            </div>
+            <div class="mb-3">
+                <label for="field5" class="form-label">Field 5:</label>
+                <textarea class="form-control" id="field5" name="field5" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="field6" class="form-label">Field 6:</label>
+                <input type="checkbox" class="form-check-input" id="field6" name="field6">
+            </div>
+            <div class="mb-3">
+                <label for="field7" class="form-label">Field 7:</label>
+                <input type="number" step="0.01" class="form-control" id="field7" name="field7" required>
+            </div>
+            <div class="mb-3">
+                <label for="field8" class="form-label">Field 8:</label>
+                <input type="email" class="form-control" id="field8" name="field8" required>
+            </div>
+            <div class="mb-3">
+                <label for="field9" class="form-label">Field 9:</label>
+                <input type="url" class="form-control" id="field9" name="field9" required>
+            </div>
+            <div class="mb-3">
+                <label for="field10" class="form-label">Field 10:</label>
+                <input type="time" class="form-control" id="field10" name="field10" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
     <a href="/userlogout">logout</a>
 </body>
 </html>
