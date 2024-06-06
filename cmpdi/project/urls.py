@@ -11,7 +11,13 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('home', views.home, name='home'),
     path('account', views.account, name='account'),
+    path('billview', views.billview, name='billview'),
+    path('create/', views.bills_detail_create, name='bills_detail_create'),
+    path('update_payment_status', views.update_payment_status, name='update_payment_status'),
+    path('adminview', views.adminview, name='adminview'),
+    path('adminlogin', views.adminlogin, name='adminlogin'),
+    path('update_status', views.update_status, name='update_status'),
 
-
-    path('create/', views.random_detail_create, name='random_detail_create'),
 ]
+
+

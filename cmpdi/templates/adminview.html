@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMPDI BillTrack System</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 3px;
+            text-align: left;
+            border-bottom: 1px solid #191818;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        select {
+            padding: 5px;
+            width: 100%; 
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .action-column {
+            width: 100px;
+        }
+
+        .paid {
+            color: green;
+        }
+
+        .not-paid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello</h1>
+    <br>
+    <h1>Hello</h1>
+    <a href="/userlogout" style="text-decoration: none; color: black;"><button style="float:right; margin-right: 30px; padding:10px 20px 10px 20px; border-radius: 10px; background-color:rgb(246, 148, 50);"><b style="color: black;">Logout</b></button></a>
+    <h1 style="text-align: center;">All Bills</h1>
+    
+    {% if all_bills %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th> <!-- Add sequence number column -->
+                    <th>Name</th>
+                    <th>Department Name</th>
+                    <th>Department Id</th>
+                    <th>Contract No.</th>
+                    <th>Item Description</th>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>Amount</th>
+                    <th>Purchase Order</th>
+                    <th>Service Entry Sheet</th>
+                    <th>BC No.</th>
+                    <th>Payment Status</th>
+                    <th>Payment Date</th>
+                    <th>Action</th>
+                    <th class="action-column">Invoice PDF</th> <!-- Adjust the class for the action column -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for bill in all_bills %}
+                <tr>
+                    <td>{{ forloop.counter }}</td> <!-- Display sequence number -->
+                    <td>{{ bill.profile.user.first_name }} {{ bill.profile.user.last_name }}</td>
+                    <td>{{ bill.profile.department_name }}</td>
+                    <td>{{ bill.profile.department_id }}</td>
+                    <td>{{ bill.field1 }}</td>
+                    <td>{{ bill.field2 }}</td>
+                    <td>{{ bill.field3 }}</td>
+                    <td>{{ bill.field4 }}</td>
+                    <td>{{ bill.field5 }}</td>
+                    <td>{{ bill.field6 }}</td>
+                    <td>{{ bill.field7 }}</td>
+                    <td>{{ bill.field8 }}</td>
+                    <td>
+                        <form action="/update_status" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="bill_id" value="{{ bill.id }}">
+                            <select name="payment_status" class="{% if bill.field9 == 'paid' %}paid{% else %}not-paid{% endif %}">
+                                <option value="paid" {% if bill.field9 == 'paid' %} selected {% endif %}>Paid</option>
+                                <option value="not_paid" {% if bill.field9 == 'not_paid' %} selected {% endif %}>Not Paid</option>
+                            </select>
+                    </td>
+                    <td><input type="date" name="payment_date" value="{{ bill.field10 }}"></td> <!-- Input field for payment date -->
+                    <td><button type="submit">Update</button></td>
+                    </form>
+                    <td>
+                        {% if bill.field11 %}
+                            <a href="{{ bill.field11.url }}" target="_blank">View PDF</a>
+                        {% else %}
+                            No file
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="text-align: center;">No bills found.</p>
+    {% endif %}
+</body>
+</html>

@@ -41,12 +41,12 @@
         <img src="/static/c1.1.jpg" style="height: 450px; width: 700px;" alt="image">
     </div>  
     <div class="login-form" style=" float: right; position: relative; right: 30px;">
-        <h4 style="text-align: center;"><b>Super-admin Login</b></h4>
+        <h4 style="text-align: center;"><b>Admin Login</b></h4>
         <hr>
         {% if error %}
         <p style="text-align: center; color: red;">{{ error }}</p>
         {% endif %}
-        <form method="post" action="/account">
+        <form method="post" action="/adminlogin">
             {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username:</label>

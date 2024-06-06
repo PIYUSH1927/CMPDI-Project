@@ -3,59 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CMPDI BillTrack System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    Home
-
-    <div class="container">
-        <h2 class="mt-4">Random Detail Form</h2>
-        <form method="post" action="/create/">
+    <div>
+        <h1>hello</h1>
+        <br>
+        <h1>Hello</h1>
+    </div>
+    <div >
+    <a href="/billview" style="text-decoration: none; color: black;"><button style="float:left;  padding:8px 13px 8px 13px; border-radius: 10px;  margin-left: 110px;  background-color:rgb(246, 148, 50) ;"><b>View My Bills</b></button></a>
+    <a style="color: white; text-decoration: none;" href="/userlogout"><button style="float:right;  padding:8px 15px 8px 15px; border-radius: 10px; margin: 15px; margin-right: 110px; background-color:rgb(151, 4, 46) ;"><b style="color: white;" >Logout</b></button></a>
+    </div>
+   
+    <div class="container" style="width: 60%;">
+        <h2 class="mt-4" style="text-align: center;">Bill Details Form</h2>
+        <form method="post" action="/create/" enctype="multipart/form-data" style="margin-top: 20px;">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="field1" class="form-label">Field 1:</label>
-                <input type="text" class="form-control" id="field1" name="field1" required>
+                <label for="field1" class="form-label">Contract No.:</label>
+                <input type="text" class="form-control" id="Contract No." name="field1" required>
             </div>
             <div class="mb-3">
-                <label for="field2" class="form-label">Field 2:</label>
-                <input type="number" class="form-control" id="field2" name="field2" required>
+                <label for="field2" class="form-label">Item Desc.:</label>
+                <input type="text" class="form-control" id="field2" name="field2" required>
             </div>
             <div class="mb-3">
-                <label for="field3" class="form-label">Field 3:</label>
-                <input type="date" class="form-control" id="field3" name="field3" required>
+                <label for="field3" class="form-label">Invoice No.:</label>
+                <input type="text" class="form-control" id="field3" name="field3" required>
             </div>
             <div class="mb-3">
-                <label for="field4" class="form-label">Field 4:</label>
-                <input type="text" class="form-control" id="field4" name="field4" required>
+                <label for="field4" class="form-label">Invoice Date:</label>
+                <input type="date" class="form-control" id="field4" name="field4" required>
             </div>
             <div class="mb-3">
-                <label for="field5" class="form-label">Field 5:</label>
-                <textarea class="form-control" id="field5" name="field5" rows="3" required></textarea>
+                <label for="field5" class="form-label">Amount:</label>
+                <input type="text" class="form-control" id="field5" name="field5" required>
             </div>
             <div class="mb-3">
-                <label for="field6" class="form-label">Field 6:</label>
-                <input type="checkbox" class="form-check-input" id="field6" name="field6">
+                <label for="field6" class="form-label">Purchase Order:</label>
+                <input type="text" class="form-control" id="field6" name="field6" required>
             </div>
             <div class="mb-3">
-                <label for="field7" class="form-label">Field 7:</label>
-                <input type="number" step="0.01" class="form-control" id="field7" name="field7" required>
+                <label for="field7" class="form-label">Service Entry Sheet:</label>
+                <input type="text" class="form-control" id="field7" name="field7" required>
             </div>
             <div class="mb-3">
-                <label for="field8" class="form-label">Field 8:</label>
-                <input type="email" class="form-control" id="field8" name="field8" required>
+                <label for="field8" class="form-label">BC No.:</label>
+                <input type="text" class="form-control" id="field8" name="field8" required>
             </div>
             <div class="mb-3">
-                <label for="field9" class="form-label">Field 9:</label>
-                <input type="url" class="form-control" id="field9" name="field9" required>
+                <label class="form-label">Payment Status:</label>
+                <div>
+                    <input type="radio" id="paid" name="field9" value="paid" required>
+                    <label for="paid">Paid</label>
+                </div>
+                <div>
+                    <input type="radio" id="not_paid" name="field9" value="not_paid" required>
+                    <label for="not_paid">Not Paid</label>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="field10" class="form-label">Field 10:</label>
-                <input type="time" class="form-control" id="field10" name="field10" required>
+                <label for="field10" class="form-label">Payment Date:</label>
+                <input type="date" class="form-control" id="field10" name="field10">
             </div>
+            <div class="mb-3">
+                <label for="field11" class="form-label">Upload Invoice:</label>
+                <input type="file" class="form-control" id="field11" name="field11" accept="application/pdf" required>
+            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-    <a href="/userlogout">logout</a>
+   
+    <br>
+    <br>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
