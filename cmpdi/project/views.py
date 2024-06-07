@@ -44,7 +44,7 @@ def userlogin(request):
 
         if user is not None:
             login(request, user)
-            return redirect("/home")
+            return redirect("/billview")
         else:
             error_message = "Invalid username or password."
     
