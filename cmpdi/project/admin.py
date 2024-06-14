@@ -10,7 +10,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 
 class BillsAdmin(admin.ModelAdmin):
-    list_display = ('get_username', 'get_first_name', 'get_last_name', 'get_department_name', 'get_department_id','field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'display_field11')
+    list_display = ('get_username', 'get_first_name', 'get_last_name', 'get_department_name', 'get_department_id','field1', 'field2', 'field3', 'field4','field41', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'display_field11')
 
     def get_username(self, obj):
         return obj.profile.user.username

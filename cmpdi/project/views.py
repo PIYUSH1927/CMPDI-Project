@@ -20,11 +20,9 @@ def billview(request):
         profile = Profile.objects.get(user=request.user)
         bills = Bill.objects.filter(profile=profile)
     except Profile.DoesNotExist:
-        # Handle the case where the Profile does not exist
-        return render(request, "billview.html")  # Render a template informing the user or redirect them
+        return render(request, "billview.html")  
 
     if not bills:
-        # If no bills are found, you might want to inform the user or handle this case in the template
         return render(request, "billview.html", {'bills': bills, 'message': 'No bills found.'})
 
     return render(request, "billview.html", {'bills': bills})
@@ -42,10 +40,10 @@ def filter_bills(request):
         bills = bills.filter(field9=payment_status)
 
     if start_date:
-        bills = bills.filter(field10__gte=start_date)
+        bills = bills.filter(field4__gte=start_date)
 
     if end_date:
-        bills = bills.filter(field10__lte=end_date)
+        bills = bills.filter(field4__lte=end_date)
 
     context = {
         'all_bills': bills
@@ -110,7 +108,6 @@ def adminlogin(request):
             error_message = "Invalid username or password."
     
     if request.user.is_authenticated:
-        # If the user is already authenticated but not a superuser, render access denied page
         return render(request, "adminlogin.html")
 
     return render(request, "adminlogin.html", {'error_message': error_message})
@@ -189,6 +186,7 @@ def bills_detail_create(request):
         field2 = request.POST.get('field2')
         field3 = request.POST.get('field3')
         field4 = request.POST.get('field4')
+        field41 = request.POST.get('field41')
         field5 = request.POST.get('field5')
         field6 = request.POST.get('field6') 
         field7 = request.POST.get('field7')
@@ -203,6 +201,7 @@ def bills_detail_create(request):
             field2=field2,
             field3=field3,
             field4=field4,
+            field41=field41,
             field5=field5,
             field6=field6,
             field7=field7,

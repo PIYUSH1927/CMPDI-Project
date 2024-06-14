@@ -15,6 +15,7 @@ class Bill(models.Model):
     field2 = models.CharField(max_length=200, verbose_name="Item Description")
     field3 = models.CharField(max_length=200, verbose_name="Invoice No.")
     field4 = models.CharField(max_length=200, verbose_name="Invoice Date.")
+    field41 = models.CharField(max_length=200, verbose_name="Vendor Name")
     field5 = models.CharField(max_length=200, verbose_name="Amount")
     field6 = models.CharField(max_length=200, verbose_name="Purchase Order")
     field7 = models.CharField(max_length=200, verbose_name="Service Entry Sheet")

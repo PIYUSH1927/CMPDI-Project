@@ -65,12 +65,12 @@
         .footer {
             background-color: #1e1d1d;
             color: white;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
 
         .footer p {
-            margin: 5px 0;
+            margin: 2px 0;
         }
 
     </style>
@@ -122,8 +122,9 @@
                     <th>Contract No.</th>
                     <th>Item Description</th>
                     <th>Invoice No.</th>
-                    <th>Amount</th>
                     <th>Invoice Date</th>
+                    <th>Amount</th>
+                    <th>Vendor Name</th>
                     <th>Purchase Order</th>
                     <th>Service Entry Sheet</th>
                     <th>BC No.</th>
@@ -143,8 +144,9 @@
                     <td>{{ bill.field1 }}</td>
                     <td>{{ bill.field2 }}</td>
                     <td>{{ bill.field3 }}</td>
-                    <td>{{ bill.field5 }}</td>
                     <td>{{ bill.field4 }}</td>
+                    <td>{{ bill.field5 }}</td>
+                    <td>{{ bill.field41 }}</td>
                     <td>{{ bill.field6 }}</td>
                     <td>{{ bill.field7 }}</td>
                     <td>{{ bill.field8 }}</td>
@@ -175,7 +177,8 @@
         <p style="text-align: center;">No bills found.</p>
     {% endif %}
 
-    <footer class="footer" >
+    <footer class="footer" style="background-color: #2c2a2aef;" >
+        <hr>
         <p>© Designed and Developed by ICT Dept. CMPDI Ranchi</p>
         <p>Copyright © 2024 Central Mine Planning And Design Institute. All rights reserved.</p>
     </footer>

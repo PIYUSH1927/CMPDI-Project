@@ -12,7 +12,7 @@
 
         th, td {
             padding: 8px;
-            text-align: left;
+            text-align: center;
             border-bottom: 1px solid #191818;
         }
 
@@ -75,6 +75,7 @@
                 <th>Item Description</th>
                 <th>Invoice No.</th>
                 <th>Invoice Date</th>
+                <th>Vendor Name</th>
                 <th>Amount</th>
                 <th>Purchase Order</th>
                 <th>Service Entry Sheet</th>
@@ -93,6 +94,7 @@
                 <td>{{ bill.field2 }}</td>
                 <td>{{ bill.field3 }}</td>
                 <td>{{ bill.field4 }}</td>
+                <td>{{ bill.field41 }}</td>
                 <td>{{ bill.field5 }}</td>
                 <td>{{ bill.field6 }}</td>
                 <td>{{ bill.field7 }}</td>
@@ -107,7 +109,7 @@
                         </select>
                 </td>
                 <td><input type="date" name="payment_date" value="{{ bill.field10 }}"></td> <!-- Input field for payment date -->
-                <td><button type="submit">Update</button></td>
+                <td><button type="submit" onclick="showAlert('{{ bill.field3  }}')">Update</button></td>
                 </form>
                 <td>
                     {% if bill.field11 %}
@@ -140,5 +142,11 @@
             <p class="bottom text-center my-0">© Designed and Developed by ICT Dept. CMPDI Ranchi</p>
             <p class="bottom text-center my-0">Copyright © 2024 Central Mine Planning And Design Institute. All rights reserved.</p>
         </footer>
+
+        <script>
+            function showAlert(invoiceNumber) {
+                alert('Payment details updated for Invoice Number: ' + invoiceNumber);
+            }
+        </script>
 </body>
 </html>
