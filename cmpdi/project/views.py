@@ -29,8 +29,29 @@ def billview(request):
 
     return render(request, "billview.html", {'bills': bills})
 
+@login_required(login_url='/adminlogin')
+def filter_bills(request):
+    profile = Profile.objects.get(user=request.user)
+    payment_status = request.GET.get('payment_status')
+    start_date = request.GET.get('start_date')
+    end_date = request.GET.get('end_date')
 
+    bills = Bill.objects.filter(profile__department_id=profile.department_id)
 
+    if payment_status:
+        bills = bills.filter(field9=payment_status)
+
+    if start_date:
+        bills = bills.filter(field10__gte=start_date)
+
+    if end_date:
+        bills = bills.filter(field10__lte=end_date)
+
+    context = {
+        'all_bills': bills
+    }
+
+    return render(request, 'adminview.html', context)
 
 
 def userlogin(request):
@@ -130,7 +151,8 @@ def home(request):
 @login_required(login_url='/adminlogin')
 def adminview(request):
     if request.user.is_superuser:
-        all_bills = Bill.objects.all()
+        profile = Profile.objects.get(user=request.user)
+        all_bills = Bill.objects.filter(profile__department_id=profile.department_id)
         return render(request, "adminview.html", {'all_bills': all_bills})
     else:
         return redirect("/adminlogin")

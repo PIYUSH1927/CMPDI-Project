@@ -17,7 +17,7 @@ urlpatterns = [
     path('adminview', views.adminview, name='adminview'),
     path('adminlogin', views.adminlogin, name='adminlogin'),
     path('update_status', views.update_status, name='update_status'),
-
+    path('filter_bills/', views.filter_bills, name='filter_bills'),
 ]
 
 
