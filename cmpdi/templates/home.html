@@ -30,76 +30,78 @@
     </div>
       </div>
 
-    <nav style="background-color: #2c2a2aef; padding: 5px; ">
+    <nav style="background-color: #2c2a2aef; padding: 5px; margin-bottom: 15px;">
   
     </nav>
 
     
  
-    <br>
     <h2 class="mt-0 fw-bold" style="text-align: center;  color:rgb(11, 11, 58); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Add Your Bill Details</h2>
-    <br>
-    <div class="container" style="width: 60%;  box-shadow:6px 3px 5px 3px rgb(170, 172, 171); padding: 40px; padding-left: 60px; padding-right: 60px; border-radius: 20px; background-color:rgb(240, 239, 239);">
+    <div class="container" style="width: 90%;  box-shadow:6px 3px 5px 3px rgb(170, 172, 171); padding: 40px; border-radius: 20px; background-color:rgb(240, 239, 239);">
         
-        <form method="post" action="/create/" enctype="multipart/form-data" style="margin-top: 20px; ">
+        <form method="post" action="/create/" enctype="multipart/form-data" >
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="field1" class="form-label fw-bold">Contract No.:</label>
-                <input type="text" class="form-control zz" id="Contract No." name="field1" required>
-            </div>
-            <div class="mb-3">
-                <label for="field2" class="form-label fw-bold">Item Desc.:</label>
-                <input type="text" class="form-control zz" id="field2" name="field2" required>
-            </div>
-            <div class="mb-3">
-                <label for="field3" class="form-label fw-bold">Invoice No.:</label>
-                <input type="text" class="form-control zz" id="field3" name="field3" required>
-            </div>
-            <div class="mb-3">
-                <label for="field4" class="form-label fw-bold">Invoice Date:</label>
-                <input type="date" class="form-control zz" id="field4" name="field4" required>
-            </div>
-            <div class="mb-3">
-                <label for="field41" class="form-label fw-bold">Vendor Name:</label>
-                <input type="text" class="form-control zz" id="field41" name="field41" required>
-            </div>
-            <div class="mb-3">
-                <label for="field5" class="form-label fw-bold">Amount:</label>
-                <input type="text" class="form-control zz" id="field5" name="field5" required>
-            </div>
-            <div class="mb-3">
-                <label for="field6" class="form-label fw-bold">Purchase Order:</label>
-                <input type="text" class="form-control zz" id="field6" name="field6" required>
-            </div>
-            <div class="mb-3">
-                <label for="field7" class="form-label fw-bold">Service Entry Sheet:</label>
-                <input type="text" class="form-control zz" id="field7" name="field7" required>
-            </div>
-            <div class="mb-3">
-                <label for="field8" class="form-label fw-bold">BC No.:</label>
-                <input type="text" class="form-control zz" id="field8" name="field8" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-bold">Payment Status:</label>
-                <div>
-                    <input type="radio" id="paid" name="field9" value="paid" required>
-                    <label for="paid">Paid</label>
+            <div class="row ">
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field1" class="form-label fw-bold">Contract No.:</label>
+                    <input type="text" class="form-control zz" id="Contract No." name="field1" required>
                 </div>
-                <div>
-                    <input type="radio" id="not_paid" name="field9" value="not_paid" required>
-                    <label for="not_paid">Not Paid</label>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field2" class="form-label fw-bold">Item Desc.:</label>
+                    <input type="text" class="form-control zz" id="field2" name="field2" required>
                 </div>
-            </div>
-            <div class="mb-3 fw-bold">
-                <label for="field10" class="form-label">Payment Date: (Leave blank if payment status is Not Paid)</label>
-                <input type="date" class="form-control zz" id="field10" name="field10">
-            </div>
-            <div class="mb-3 fw-bold">
-                <label for="field11" class="form-label">Upload Invoice:</label>
-                <input type="file" class="form-control zz" id="field11" name="field11" accept="application/pdf" required>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field3" class="form-label fw-bold">Invoice No.:</label>
+                    <input type="text" class="form-control zz " id="field3" name="field3" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field4" class="form-label fw-bold">Invoice Date:</label>
+                    <input type="date" class="form-control zz " id="field4" name="field4" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field41" class="form-label fw-bold">Vendor Name:</label>
+                    <input type="text" class="form-control zz" id="field41" name="field41" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field5" class="form-label fw-bold">Amount:</label>
+                    <input type="text" class="form-control zz" id="field5" name="field5" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field6" class="form-label fw-bold">Purchase Order:</label>
+                    <input type="text" class="form-control zz" id="field6" name="field6" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field7" class="form-label fw-bold">Service Entry Sheet:</label>
+                    <input type="text" class="form-control zz" id="field7" name="field7" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field8" class="form-label fw-bold">BC No.:</label>
+                    <input type="text" class="form-control zz" id="field8" name="field8" required>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label class="form-label fw-bold">Payment Status:</label>
+                    <div>
+                        <input type="radio" id="paid" name="field9" value="paid" required>
+                        <label for="paid">Paid</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="not_paid" name="field9" value="not_paid" required>
+                        <label for="not_paid">Not Paid</label>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2 pe-4">
+                    <label for="field10" class="form-label fw-bold">Payment Date: (Leave blank if payment status is Not Paid)</label>
+                    <input type="date" class="form-control zz" id="field10" name="field10">
+                </div>
+                <div class="col-md-6 mb-3 pe-4">
+                    <label for="field11" class="form-label fw-bold">Upload Invoice:</label>
+                    <input type="file" class="form-control zz" id="field11" name="field11" accept="application/pdf" required>
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-success">Add Bill</button>
+            <div class="text-center ">
+                <button type="submit" class="btn btn-success px-4"><b>Add Bill</b></button>
+            </div>
         </form>
     </div>
 
