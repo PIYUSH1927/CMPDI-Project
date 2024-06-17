@@ -51,6 +51,17 @@
         .not-paid {
             color: red;
         }
+
+        .footer {
+            background-color: #1e1d1d;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 2px 0;
+        }
     </style>
 </head>
 <body style="background-color: beige; ">
@@ -63,9 +74,12 @@
     </nav>
 
 
-    <h2 style="text-align: center; padding-left: 150px; font-weight: bold; color: rgb(3, 3, 59); padding-bottom:5px; padding-top: 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Your Bills</h2>
+    <h2 style="text-align: center; padding-left: 150px; font-weight: bold; color: rgb(3, 3, 59); padding-bottom:2px; padding-top: 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Your Bills</h2>
     {% if message %}
-    <p>{{ message }}</p>
+    <hr>
+    <br>
+    <br>
+    <h2 style="text-align: center;">{{ message }}</h2>
     {% elif bills %}
     <table>
         <thead>
@@ -123,30 +137,26 @@
         </tbody>
     </table>
     {% else %}
+
         <p>No bills found.</p>
     {% endif %}
 
     <br>
     <br>
-    <br>
-    <br>
+   
+  
 
-        <footer class=" text-white py-1 container-fluid " style="background-color:#1e1d1def; position:absolute; bottom: 0px;">
-            <!--top-->
-            <div class="  " style="margin-right: 140px; ">
-            </div>
-    
+    <footer class="footer" style="background-color: #2c2a2aef; margin-top: 338px;" >
+        <hr>
+        <p>© Designed and Developed by ICT Dept. CMPDI Ranchi</p>
+        <p>Copyright © 2024 Central Mine Planning And Design Institute. All rights reserved.</p>
+    </footer>
 
-          
-            <hr class="">
-            <p class="bottom text-center my-0">© Designed and Developed by ICT Dept. CMPDI Ranchi</p>
-            <p class="bottom text-center my-0">Copyright © 2024 Central Mine Planning And Design Institute. All rights reserved.</p>
-        </footer>
+    <script>
+        function showAlert(invoiceNumber) {
+            alert('Payment details updated for Invoice Number: ' + invoiceNumber);
+        }
+    </script>
 
-        <script>
-            function showAlert(invoiceNumber) {
-                alert('Payment details updated for Invoice Number: ' + invoiceNumber);
-            }
-        </script>
 </body>
 </html>
