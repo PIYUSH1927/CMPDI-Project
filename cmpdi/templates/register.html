@@ -52,7 +52,7 @@
             font-weight: bold;
             margin-bottom: 0.5em;
         }
-        input {
+        input, select {
             padding: 0.5em; 
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -88,6 +88,20 @@
             text-align: center;
         }
     </style>
+    <script>
+        function updateDepartmentId() {
+            const departmentName = document.getElementById('department_name').value;
+            const departmentIdField = document.getElementById('department_id');
+            
+            const departmentIds = {
+                'ICT': '13',
+                'IT': '12345',
+                'COM': '888'
+            };
+            
+            departmentIdField.value = departmentIds[departmentName];
+        }
+    </script>
 </head>
 <body>
     <div class="heading" style="background-color: white;">
@@ -145,11 +159,16 @@
                 </div>
                 <div class="form-group ps-3">
                     <label for="department_name">Department Name:</label>
-                    <input type="text" id="department_name" name="department_name" required>
+                    <select id="department_name" name="department_name" onchange="updateDepartmentId()" required>
+                        <option value="" selected disabled>Select Department</option>
+                        <option value="ICT">ICT</option>
+                        <option value="IT">IT</option>
+                        <option value="COM">COM</option>
+                    </select>
                 </div>
                 <div class="form-group ps-3">
                     <label for="department_id">Department ID:</label>
-                    <input type="text" id="department_id" name="department_id" required>
+                    <input type="text" id="department_id" name="department_id" readonly required>
                 </div>
                 <div class="form-group form-group-full">
                     <button type="submit">Register</button>

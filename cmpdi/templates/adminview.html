@@ -130,7 +130,7 @@
                     <th>BC No.</th>
                     <th>Payment Status</th>
                     <th>Payment Date</th>
-                    <th>Action</th>
+                    
                     <th>Invoice PDF</th>
                 </tr>
             </thead>
@@ -150,17 +150,9 @@
                     <td>{{ bill.field6 }}</td>
                     <td>{{ bill.field7 }}</td>
                     <td>{{ bill.field8 }}</td>
-                    <td>
-                        <form action="/update_status" method="post" id="update_form_{{ bill.id }}">
-                            {% csrf_token %}
-                            <input type="hidden" name="bill_id" value="{{ bill.id }}">
-                            <select name="payment_status" class="{% if bill.field9 == 'paid' %}paid{% else %}not-paid{% endif %}">
-                                <option value="paid" {% if bill.field9 == 'paid' %} selected {% endif %}>Paid</option>
-                                <option value="not_paid" {% if bill.field9 == 'not_paid' %} selected {% endif %}>Not Paid</option>
-                            </select>
-                    </td>
-                    <td><input type="date" name="payment_date" value="{{ bill.field10 }}"></td>
-                    <td><button type="submit" onclick="showAlert('{{ bill.field3  }}')">Update</button></td>
+                    <td>{{ bill.field9 }}</td>
+                    <td>{{ bill.field10 }}</td>
+                    
                     </form>
                     <td>
                         {% if bill.field11 %}
@@ -186,10 +178,6 @@
         <p>Copyright © 2024 Central Mine Planning And Design Institute. All rights reserved.</p>
     </footer>
 
-    <script>
-        function showAlert(invoiceNumber) {
-            alert('Payment details updated for Invoice Number: ' + invoiceNumber);
-        }
-    </script>
+
 </body>
 </html>
